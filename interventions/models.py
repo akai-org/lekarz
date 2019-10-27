@@ -16,7 +16,7 @@ class Operation(models.Model):
 
 class Patient(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    disease = models.CharField(max_length=128)
+    hospitalization_case = models.CharField(max_length=128)
     start_date = models.DateField()
     main_dr = models.CharField(max_length=32, default="Pole na przypisanie doktora")
     dr_description = models.TextField()
