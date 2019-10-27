@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 
 
 class Intervention(models.Model):
-    name = models.CharField(max_length=255, default="zabieg", null=False)
-    description = models.TextField()
-    min_time = models.FloatField()
+    name = models.CharField('Nazwa', max_length=255, default="zabieg", null=False)
+    description = models.TextField('Opis')
+    min_time = models.FloatField('Czas trwania zabiegu')
 
 
 class Operation(models.Model):
