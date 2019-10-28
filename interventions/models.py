@@ -20,5 +20,3 @@ class Patient(models.Model):
     start_date = models.DateField()
     main_dr = models.CharField(max_length=32, default="Pole na przypisanie doktora")
     dr_description = models.TextField()
-
-
