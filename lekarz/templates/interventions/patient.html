@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient {{ patient.id }} details{% endblock %}
+
+{% block layout %}
+    <p>
+        Full name: {{ patient.user.get_full_name }} <br>
+        Hospitalization case: {{ patient.hospitalization_case }} <br>
+        Start day: {{ patient.start_date }} <br>
+        Doctor's notes: {{ patient.dr_description }} <br>
+        Assigned doctor's card: number {{ patient.main_dr.card_number }} <br>
+    </p>
+{% endblock %}
