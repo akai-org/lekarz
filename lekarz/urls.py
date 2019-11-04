@@ -8,7 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('admin/', admin.site.urls),
     path('patients/<int:patient_id>/details', patient_details),
     path('api/', include('api.urls', namespace='api')),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),

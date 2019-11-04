@@ -1,12 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'unauthenticated.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+    <div class="container">
+        <div class="card login-window">
+            <div class="card-header">Logowanie</div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">
+                            Zaloguj się!
+                        </button>
+                    </div>
+                </form>
 
-{% block title %}Login{% endblock %}
-
-{% block layout %}
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
