@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block layout %}
+    <div class="container-fluid">
+        {% include 'includes/unauthenticated/header.html' %}
+        {% block content %}{% endblock %}
+        {% include 'includes/unauthenticated/footer.html' %}
+    </div>
+{% endblock %}
