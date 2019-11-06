@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic.base import TemplateView
 from interventions.views import patient_details
+from message.views import user_inbox
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,6 +12,7 @@ urlpatterns = [
     path('patients/<int:patient_id>/details', patient_details),
     path('api/', include('api.urls', namespace='api')),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path('inbox/', user_inbox),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
