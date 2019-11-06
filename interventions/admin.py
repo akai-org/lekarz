@@ -1,9 +1,13 @@
 from django.contrib import admin
-from .models import Intervention, Patient, Operation
+from .models import Intervention, Patient, Operation, Doctor
 
 
 class InterventionAdmin(admin.ModelAdmin):
     fields = ['name', 'description', 'min_time']
+
+
+class DoctorAdmin(admin.ModelAdmin):
+    fieldsets = [('Dodaj nowego doktora', {'fields':['specialization', 'section', 'card_number', 'user']})]
 
 
 class OperationInLine(admin.StackedInline):
@@ -18,3 +22,4 @@ class PatientAdmin(admin.ModelAdmin):
 
 admin.site.register(Intervention, InterventionAdmin)
 admin.site.register(Patient, PatientAdmin)
+admin.site.register(Doctor, DoctorAdmin)
