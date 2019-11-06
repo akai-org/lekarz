@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Intervention, Patient, Operation
+from .models import Intervention, Patient, Doctor, Operation
+from .models import Intervention, Patient, 
 
 
 class InterventionAdmin(admin.ModelAdmin):
