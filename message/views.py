@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from message.models import Message
 
-# Create your views here.
+
+def user_inbox(request):
+    if request.user.is_anonymous:
+        return redirect('/accounts/login')
+    messages = Message.objects.filter(receiver=request.user)
+    return render(request, 'message/inbox.html', {'messages': messages})
