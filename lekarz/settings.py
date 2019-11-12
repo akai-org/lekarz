@@ -43,10 +43,7 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 
-AUTHENTICATION_BACKENDS = [
-    'oauth2_provider.backends.OAuth2Backend',
-    'django.contrib.auth.backends.ModelBackend'
-]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -150,7 +147,8 @@ LOGOUT_REDIRECT_URL = 'home'
 LOGIN_EXEMPT_URLS =(
     r'^account/logout$',
     r'^account/register$',
-    r'^account/login'
+    r'^account/login',
+    r'^admin'
 )
 
 CORS_ORIGIN_ALLOW_ALL = True
