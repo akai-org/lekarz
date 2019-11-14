@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import generics
 from oauth2_provider.contrib.rest_framework import TokenHasScope, OAuth2Authentication
 from interventions.models import Patient
-from .serializers import PatientSerializer
+from message.models import Message
+from .serializers import PatientSerializer, MessageSerializer
 
 
 class ApiEndpoint(ProtectedResourceView):
@@ -20,6 +21,9 @@ class PatientDetails(generics.RetrieveAPIView):
     serializer_class = PatientSerializer
 
 
-@login_required()
-def secret_page(request, *args, **kwargs):
-    return HttpResponse('Secret contents!', status=200)
+class MessageDetails(generics.RetrieveAPIView):
+    authentication_classes = [OAuth2Authentication]
+    permission_classes = [TokenHasScope]
+    required_scopes = ['read']
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer

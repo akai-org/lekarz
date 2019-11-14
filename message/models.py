@@ -9,5 +9,6 @@ class Message(models.Model):
     content = models.TimeField()
     time = models.TimeField()
     date = models.DateField()
+
     def __str__(self):
         return self.title
