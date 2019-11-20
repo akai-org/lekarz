@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor {{ doctor.id }} details{% endblock %}
+
+{% block layout %}
+    <p>
+        Full name: {{ supername(doctor.user.get_full_name) }} <br>
+        Specialization: {{ doctor.specialization }} <br>
+        Section: {{ doctor.section }} <br>
+        Card number: {{ doctor.card_number }} <br>
+        Assigned doctor's card: number {{ patient.main_dr.card_number }} <br>
+    </p>
+{% endblock %}
