@@ -37,7 +37,7 @@ class Patient(models.Model):
     start_date = models.DateField('Data przyjęcia')
     main_dr = models.ForeignKey(Doctor, on_delete=models.DO_NOTHING, verbose_name = "Lekarz prowadzący")
     dr_description = models.TextField('Opis')
-
+    signed_out_date = models.DateField(None)
     def __str__(self):
         return str(self.user)
 
