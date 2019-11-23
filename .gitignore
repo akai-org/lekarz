@@ -89,3 +89,6 @@ local_settings.py
 db.sqlite3
 node_modules/
 .idea/
+
+# VS code
+.vscode/
