@@ -16,7 +16,7 @@ class PatientSerializer(serializers.ModelSerializer):
 class MessageSerializer(serializers.ModelSerializer):
 
     sender = serializers.StringRelatedField()
-    receiver = serializers.StringRelatedField()
+    receiver = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Message
