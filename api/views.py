@@ -5,7 +5,7 @@ from rest_framework import generics
 from oauth2_provider.contrib.rest_framework import TokenHasScope, OAuth2Authentication
 from interventions.models import Patient
 from message.models import Message
-from .serializers import PatientSerializer, MessageSerializer
+from .serializers import PatientSerializer, MessageSerializer, MessageCreateSerializer
 
 
 class ApiEndpoint(ProtectedResourceView):
@@ -27,3 +27,10 @@ class MessageDetails(generics.RetrieveAPIView):
     required_scopes = ['read']
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
+
+
+class MessageCreate(generics.CreateAPIView):
+    authentication_classes = [OAuth2Authentication]
+    permission_classes = [TokenHasScope]
+    required_scopes = ['write']
+    serializer_class = MessageCreateSerializer
