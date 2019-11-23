@@ -16,7 +16,7 @@ class OperationInLine(admin.StackedInline):
 
 
 class PatientAdmin(admin.ModelAdmin):
-    fieldsets = [('Informacje o pacjencie', {'fields':['hospitalization_case', 'start_date', 'main_dr', 'dr_description']})]
+    fieldsets = [('Informacje o pacjencie', {'fields':['user','hospitalization_case', 'start_date', 'main_dr', 'dr_description']})]
     inlines = [OperationInLine]
 
 
