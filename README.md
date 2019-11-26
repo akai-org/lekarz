@@ -3,7 +3,9 @@
 ## How to install
 1. Download repo, 
 2. Initialize virtual environment in it: `python -m venv env`,
-3. Run that venv: `source env/bin/activate`,
+3. Run that venv: 
+  * Linux: `source env/bin/activate`
+  * Windows: `env/Scripts/activate`
 4. Install dependencies: `pip install -r requirements.txt`,
 5. Install frontend dependencies: `npm install`
 6. Compile frontend assets: `npm run dev`,
