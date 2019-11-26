@@ -17,7 +17,7 @@ class Notification(models.Model):
     receiver = models.ManyToManyField(User, related_name='NotificationsRecived')
     title = models.CharField(max_length=32)
     content = models.TimeField()
-    time = models.TimeFitield()
+    time = models.TimeField()
     date = models.DateField()
     def __str__(self):
         return self.title
