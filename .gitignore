@@ -92,3 +92,5 @@ node_modules/
 
 # VS code
 .vscode/
+
+package-lock.json
